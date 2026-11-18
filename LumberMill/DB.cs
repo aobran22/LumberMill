@@ -3,16 +3,13 @@ using System.Data;
 
 namespace LumberMill;
 
-public static class DB
+public static partial class DB
 {
-    private const string ConnStr =
-        "Host=localhost;Port=5432;Database=LumberMill;Username=aobran;Password=admin";
-
     public static DataTable Query(string sql, params NpgsqlParameter[] parameters)
     {
         using var conn = new NpgsqlConnection(ConnStr);
         using var da = new NpgsqlDataAdapter(sql, conn);
-        da.SelectCommand.Parameters.AddRange(parameters);
+        da.SelectCommand!.Parameters.AddRange(parameters);
         var table = new DataTable();
         da.Fill(table);
         return table;

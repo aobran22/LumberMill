@@ -1,6 +1,6 @@
 ﻿namespace LumberMill
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            client = new Button();
+            dgv_client = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgv_client).BeginInit();
+            SuspendLayout();
+            // 
+            // client
+            // 
+            client.Location = new Point(98, 55);
+            client.Name = "client";
+            client.Size = new Size(160, 105);
+            client.TabIndex = 0;
+            client.Text = "Klijent";
+            client.UseVisualStyleBackColor = true;
+            // 
+            // dgv_client
+            // 
+            dgv_client.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_client.Location = new Point(344, 68);
+            dgv_client.Name = "dgv_client";
+            dgv_client.RowHeadersWidth = 51;
+            dgv_client.Size = new Size(367, 183);
+            dgv_client.TabIndex = 1;
+            // 
+            // Home
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Text = "Form1";
+            Controls.Add(dgv_client);
+            Controls.Add(client);
+            Name = "Home";
+            Text = "Početna";
+            ((System.ComponentModel.ISupportInitialize)dgv_client).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button client;
+        private DataGridView dgv_client;
     }
 }
